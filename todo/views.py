@@ -12,8 +12,8 @@ def index(request):
 def topic_create(request):
     pass
 
-# update a topic
-def topic_update(request, topic_id):
+# edit a topic
+def topic_edit(request, topic_id):
     pass
 
 
@@ -27,6 +27,6 @@ def todo_create(request):
     pass
 
 # update a todo item
-def todo_update(request, todo_id):
+def todo_edit(request, todo_id):
     pass
 
