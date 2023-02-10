@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
+from django.views import generic
 
 #main index page
 def index(request):
@@ -9,24 +9,29 @@ def index(request):
 
 # ***Topics views***
 # create a new topic
-def topic_create(request):
-    pass
+class TopicCreate(generic.CreateView):
+    model = Topic
+    template_name = 'todo/topic_form.html'
 
 # edit a topic
-def topic_edit(request, topic_id):
-    pass
+class TopicEdit(generic.UpdateView):
+    model = Topic
+    template_name = 'todo/topic_form.html'
 
 
 # ***TodoItem views***
 # view details of a single todo item
-def todo_detail(request, todo_id):
-    pass
+class TodoDetail(generic.DetailView):
+    model = TodoItem
+    template_name = 'todo/todo_detail.html'
 
 # create a new todo item
-def todo_create(request):
-    pass
+class TodoCreate(generic.CreateView):
+    model = TodoItem
+    template_name = 'todo/todo_form.html'
 
 # update a todo item
-def todo_edit(request, todo_id):
-    pass
+class TodoEdit(generic.UpdateView):
+    model = TodoItem
+    template_name = 'todo/todo_form.html'
 
